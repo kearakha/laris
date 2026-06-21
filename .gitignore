@@ -1,0 +1,24 @@
+node_modules/
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Next.js
+frontend/.next/
+frontend/out/
+
+# Laravel
+backend/vendor/
+backend/.env
+backend/storage/logs/
+backend/storage/framework/cache/
+backend/storage/framework/sessions/
+backend/storage/framework/views/
+backend/bootstrap/cache/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
