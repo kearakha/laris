@@ -12,26 +12,36 @@ export interface LoginResponse {
   user: User;
 }
 
+const DEMO_BASE: Omit<User, "id" | "name" | "email" | "roles"> = {
+  phone: null,
+  avatar: null,
+  is_active: true,
+  last_login_at: null,
+  permissions: [],
+  tenant: null,
+  outlet: null,
+};
+
 const DEMO_ACCOUNTS: Record<string, { token: string; user: User }> = {
   "demo@laris.app": {
     token: "demo-token-tenant-owner",
     user: {
+      ...DEMO_BASE,
       id: 1,
       name: "Demo Owner",
       email: "demo@laris.app",
-      role: "tenant_owner",
-      is_active: true,
-    } as User,
+      roles: ["tenant_owner"],
+    },
   },
   "kasir@laris.app": {
     token: "demo-token-kasir",
     user: {
+      ...DEMO_BASE,
       id: 2,
       name: "Demo Kasir",
       email: "kasir@laris.app",
-      role: "kasir",
-      is_active: true,
-    } as User,
+      roles: ["kasir"],
+    },
   },
 };
 
